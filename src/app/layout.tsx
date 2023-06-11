@@ -3,6 +3,7 @@ import './globals.css'
 import { Figtree } from 'next/font/google'
 import SuperbaseProvider from '../../providers/SuperbaseProvider'
 import UserProvider from '../../providers/UserProvider'
+import ModalProvider from '../../providers/ModalProvider'
 
 const figtree = Figtree({ subsets: ['latin'] })
 
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={figtree.className}>
         <SuperbaseProvider>
           <UserProvider>
+            <ModalProvider />
             <SideBar>
               {children}
             </SideBar>
