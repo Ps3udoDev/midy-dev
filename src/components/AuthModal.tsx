@@ -7,6 +7,7 @@ import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import useAuthModal from "../../hooks/useAuthModal";
 import { useEffect } from "react";
+import { toast } from 'react-hot-toast';
 
 const AuthModal = () => {
   const supabaseClient = useSupabaseClient();
@@ -18,6 +19,8 @@ const AuthModal = () => {
     if (session) {
       router.refresh();
       onClose();
+
+      toast.success('Logged in!');
     }
   }, [session, router, onClose])
 
